@@ -15,7 +15,7 @@ class AuthForm(customtkinter.CTk):
 
     logo = customtkinter.CTkImage(
         Image.open("images/login.png"),
-        size=(200, 200)
+        size=(200, 200),
     )
 
 

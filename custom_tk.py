@@ -4,16 +4,14 @@ import tkinter.messagebox
 from datetime import datetime
 from multiprocessing.pool import ThreadPool
 from tkinter import Menu
-from tkinter.messagebox import showinfo
-from tkinter.messagebox import showwarning
+from tkinter.messagebox import showinfo, showwarning
 
 import customtkinter
 from PIL import Image
 
 from controller import Controller
 from settings import settings
-from spotify import APIConfig
-from spotify import SpotifyCustomer
+from spotify import APIConfig, SpotifyCustomer
 from utils import Utils
 
 # Modes: "System" (standard), "Dark", "Light"
@@ -26,7 +24,7 @@ def get_api_configuration():
     """spotify api keys"""
 
     conf = APIConfig
-    conf.SPOTIFY_CLIENT_ID = settings.STEEVE_SPOTIFY_CLIENT_ID
+    conf.SPOTIFY_CLIENT_ID = settings.SPOTIFY_CLIENT_ID
     conf.USER_ID = settings.STEEVE_USER_ID
     conf.SPOTIPY_REDIRECT_URI = settings.STEEVE_SPOTIPY_REDIRECT_URI
     conf.SPOTIFY_CLIENT_SECRET_KEY = settings.STEEVE_SPOTIFY_CLIENT_SECRET_KEY

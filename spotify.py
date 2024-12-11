@@ -1,16 +1,13 @@
 import time
 from enum import Enum
-from typing import Any
-from typing import Dict
-from typing import List
+from typing import Any, Dict, List
 
 import spotipy
 from spotipy.cache_handler import MemoryCacheHandler
 from spotipy.oauth2 import SpotifyOAuth
 
 from cache.cache_handler import CacheFileHandler
-from tracks import Track
-from tracks import TrackDto
+from tracks import Track, TrackDto
 from type import Type
 
 

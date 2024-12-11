@@ -7,12 +7,8 @@ import tkinter
 from multiprocessing import cpu_count
 from multiprocessing.pool import ThreadPool
 from pathlib import Path
-from tkinter.filedialog import askdirectory
-from tkinter.filedialog import askopenfilename
-from tkinter.filedialog import askopenfilenames
-from tkinter.messagebox import askyesno
-from tkinter.messagebox import showinfo
-from tkinter.messagebox import showwarning
+from tkinter.filedialog import askdirectory, askopenfilename, askopenfilenames
+from tkinter.messagebox import askyesno, showinfo, showwarning
 from typing import Tuple
 
 import customtkinter
@@ -24,10 +20,8 @@ from exceptions import ComponentError
 from metadata import XlsMeta
 from settings.settings import LoadingState as load
 from spotify import SpotifyCustomer
-from type import Format
-from type import Quality
-from utils import PathHolder
-from utils import Utils
+from type import Format, Quality
+from utils import PathHolder, Utils
 
 
 class Controller:
@@ -409,7 +403,6 @@ class Controller:
         self.initialise_download_textbox()
 
     def download_song(self, url_crypte) -> None:
-
         if (
             self.SPOTIFY_PLAYLIST_URI in url_crypte
             or self.SPOTIFY_TRACK_URI in url_crypte
@@ -537,8 +530,8 @@ class Controller:
 
     def get_data(self, datas) -> Tuple[list, list]:
         """get data"""
-        metas:list = []
-        contribs:list = []
+        metas: list = []
+        contribs: list = []
         for data in datas:
             meta, contrib = self.excel_handler.get_metadata(
                 metadata=XlsMeta(song_metada=data)

@@ -4,6 +4,8 @@ import os
 import sqlite3
 from sqlite3 import Error
 
+from settings.settings import BASE_DIR
+
 tables = """ CREATE TABLE IF NOT EXISTS `users`(
     `id` integer PRIMARY KEY AUTOINCREMENT,
     `username` text,
@@ -28,6 +30,7 @@ update_user_active = """ UPDATE users SET is_active = ?  WHERE id = ? """
 
 delete_user = """ DELETE FROM users WHERE id = ? """
 
+
 class DatabaseConnection:
     """manage database"""
 
@@ -37,7 +40,7 @@ class DatabaseConnection:
         self.conn = self.create_connection()
 
     def create_connection(self):
-        database = os.getcwd() + "\data.db"
+        database = os.path.join(BASE_DIR, "data.db")
         try:
             self.conn = sqlite3.connect(database)
         except Error as err:
