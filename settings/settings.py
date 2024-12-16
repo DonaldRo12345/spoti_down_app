@@ -13,6 +13,7 @@ if READ_DOT_ENV_FILE:
             env_var_list = f.readlines()
             for env_var in env_var_list:
                 key, value = env_var.split("=")
+                value = value.replace('"', "").replace("\n", "")
                 os.environ[key] = value
 
 

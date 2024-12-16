@@ -10,27 +10,26 @@ from urllib.error import URLError
 
 import tldextract
 import validators
-from ffmpy import FFmpeg
-from ffmpy import FFRuntimeError
+from ffmpy import FFmpeg, FFRuntimeError
 from requests.exceptions import ConnectionError
 from yt_dlp import YoutubeDL
 
-from exceptions import FFmpegNotInstalledError
-from exceptions import UrlNotSupportedError
-from exceptions import YoutubeDlExtractionError
+from exceptions import (
+    FFmpegNotInstalledError,
+    UrlNotSupportedError,
+    YoutubeDlExtractionError,
+)
 from spotify import SpotifyCustomer
 from tracks import Track
-from type import Format
-from type import Platform
-from type import Quality
-from type import Type
-from utils import check_ffmpeg
-from utils import check_file
-from utils import clean
-from utils import create_dir
-from utils import PathHolder
-from utils import safe_path_string
-
+from type import Format, Platform, Quality, Type
+from utils import (
+    PathHolder,
+    check_ffmpeg,
+    check_file,
+    clean,
+    create_dir,
+    safe_path_string,
+)
 
 # from youtube_dl import YoutubeDL
 

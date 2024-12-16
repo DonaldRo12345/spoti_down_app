@@ -186,27 +186,27 @@ class App(customtkinter.CTk):
         menu_bar.add_cascade(label="Fichier", menu=menu_file)
         menu_bar.add_cascade(label="Aide", menu=menu_help)
 
-        menu_file.add_cascade(label="Ouvrir un fichier csv", command=self.get_path_file)
+        menu_file.add_command(label="Ouvrir un fichier csv", command=self.get_path_file)
         # menu_file.add_cascade(label="Ouvrir un fichier audio", command=self.get_song_path)
-        menu_file.add_cascade(
+        menu_file.add_command(
             label="Ouvrir vos fichiers audios", command=self.get_many_song_path
         )
-        menu_file.add_cascade(
+        menu_file.add_command(
             label="Ouvrir un dossier contenant les sons",
             command=self.controller.open_song_folder,
         )
         menu_file.add_separator()
-        menu_file.add_cascade(
+        menu_file.add_command(
             label="Créer une playlist", command=self.open_input_dialog_event
         )
-        menu_file.add_cascade(
+        menu_file.add_command(
             label="Copier le lien de la playlist", command=self.controller.copy_link
         )
         menu_file.add_separator()
-        menu_file.add_cascade(label="Vider", command=None)
-        menu_file.add_cascade(label="Actualiser", command=self.controller.delete_cache)
+        menu_file.add_command(label="Vider", command=None)
+        menu_file.add_command(label="Actualiser", command=self.controller.delete_cache)
         menu_file.add_separator()
-        menu_file.add_cascade(label="Quitter", command=self.quit)
+        menu_file.add_command(label="Quitter", command=self.quit)
         menu_help.add_command(label="A propos", command=self.about)
 
     def dashboard_title(self, frame):
